@@ -61,7 +61,7 @@
 
             <Fluent:RibbonTabItem Header="ボタンコントロール"
                                   KeyTip="BU">
-                
+
                 <Fluent:RibbonGroupBox Header="ボタン"
                                        KeyTip="B"
                                        IsLauncherVisible="True"
@@ -126,16 +126,16 @@
 
                 <Fluent:RibbonGroupBox Header="トグル"
                                        KeyTip="TB">
-                    
+
                     <Fluent:ToggleButton Header="大トグル"
                                          KeyTip="TB"
                                          LargeIcon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-WebShield_x32.png"/>
-                    
+
                     <Fluent:ToggleButton Header="中トグル"
                                          KeyTip="TM"
                                          Size="Middle"
                                          Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-WebShield_x16.png"/>
-                    
+
                     <Fluent:ToggleButton Header="小トグル"
                                          KeyTip="TS"
                                          Size="Small"
@@ -156,7 +156,52 @@
             </Fluent:RibbonTabItem>
 
             <!-- グループ用のタブ定義 -->
-            <Fluent:RibbonTabItem x:Name="contextualTabA" Header="書式" Group="{Binding ElementName=tabGroup1, Mode=OneWay}"/>
+            <Fluent:RibbonTabItem x:Name="contextualTabA" 
+                                  Header="書式"
+                                  KeyTip="TF"
+                                  Group="{Binding ElementName=tabGroup1, Mode=OneWay}">
+                
+                <Fluent:RibbonGroupBox Header="コンボボックス"
+                                       KeyTip="CO">
+                    <Fluent:ComboBox MinWidth="130"
+                                     KeyTip="C1"
+                                     DisplayMemberPath="Text"
+                                     SelectedIndex="0">
+                        <TextBlock Text="子要素1"/>
+                        <TextBlock Text="子要素2"/>
+                        <TextBlock Text="子要素3"/>
+                    </Fluent:ComboBox>
+                    <Fluent:ComboBox Margin="0 3 0 0"
+                                     MinWidth="130"
+                                     KeyTip="C2"
+                                     DisplayMemberPath="Text"
+                                     IsEditable="False"
+                                     SelectedIndex="0">
+                        <TextBlock Text="子要素1"/>
+                        <TextBlock Text="子要素2"/>
+                        <TextBlock Text="子要素3"/>
+                    </Fluent:ComboBox>
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="スピナー"
+                                       KeyTip="SP">
+                    <Fluent:Spinner KeyTip="P1"
+                                    InputWidth="90"
+                                    Format="0 万人"
+                                    Increment="100"
+                                    Header="利用者数:"
+                                    Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-CSharp_x16.png"/>
+                    <Fluent:Spinner KeyTip="P1"
+                                    InputWidth="90"
+                                    Format="0.0 人"
+                                    Header="利用者数:"
+                                    Increment="0.1"
+                                    Maximum="100"
+                                    Minimum="5"
+                                    Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Windows8_x16.png"/>
+
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem x:Name="contextualTabB1" Header="デザイン" Group="{Binding ElementName=tabGroup2, Mode=OneWay}"/>
             <Fluent:RibbonTabItem x:Name="contextualTabB2" Header="レイアウト" Group="{Binding ElementName=tabGroup2, Mode=OneWay}"/>
         </Fluent:Ribbon>
