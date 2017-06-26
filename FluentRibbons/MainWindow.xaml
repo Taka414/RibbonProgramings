@@ -1,0 +1,171 @@
+﻿<Fluent:RibbonWindow x:Class="Ribbons.Sample.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:Fluent="urn:fluent-ribbon"
+                     xmlns:local="clr-namespace:Ribbons.Sample"
+                     mc:Ignorable="d"
+                     Title="MainWindow"
+                     Height="350"
+                     Width="525"
+                     TitleBarHeight="30"
+                     RenderOptions.BitmapScalingMode="NearestNeighbor">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Fluent:Ribbon>
+
+            <!-- クイックアクセスツールバー -->
+            <Fluent:Ribbon.QuickAccessItems>
+                <Fluent:QuickAccessMenuItem IsChecked="True">
+                    <Fluent:Button Header="FontExp" Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-FontExp-x16.png"></Fluent:Button>
+                </Fluent:QuickAccessMenuItem>
+                <Fluent:QuickAccessMenuItem IsChecked="True">
+                    <Fluent:Button Header="FontRedu" Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-FontRedu-x16.png"></Fluent:Button>
+                </Fluent:QuickAccessMenuItem>
+                <Fluent:QuickAccessMenuItem IsChecked="False">
+                    <Fluent:Button Header="FontUD" Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-FontUd_x16.png"></Fluent:Button>
+                </Fluent:QuickAccessMenuItem>
+            </Fluent:Ribbon.QuickAccessItems>
+
+            <!-- ツールバーメニュー-->
+            <Fluent:Ribbon.ToolBarItems>
+                <Fluent:Button Header="ツールバーボタン1"
+                               Size="Small"
+                               Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-WindTurbines_x16.png"/>
+                <Fluent:Button Header="ツールバーボタン2"
+                               Size="Small"
+                               Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Fan_x16.png"/>
+            </Fluent:Ribbon.ToolBarItems>
+            
+            <!-- コンテキストタブグループの定義 -->
+            <Fluent:Ribbon.ContextualGroups>
+                <Fluent:RibbonContextualTabGroup x:Name="tabGroup1"
+                                                 BorderBrush="#FF9D00"
+                                                 Background="#FF9D00"
+                                                 Foreground="#D3691D"
+                                                 Header="描画ツール"
+                                                 Visibility="Visible" />
+
+                <Fluent:RibbonContextualTabGroup x:Name="tabGroup2"
+                                                 BorderBrush="#F2CB1D"
+                                                 Background="#F2CB1D"
+                                                 Foreground="#987715"
+                                                 Header="表ツール"
+                                                 Visibility="Visible" />
+            </Fluent:Ribbon.ContextualGroups>
+
+            <Fluent:RibbonTabItem Header="ボタンコントロール"
+                                  KeyTip="BU">
+                
+                <Fluent:RibbonGroupBox Header="ボタン"
+                                       KeyTip="B"
+                                       IsLauncherVisible="True"
+                                       LauncherClick="RibbonGroupBox_LauncherClick">
+
+                    <Fluent:Button Header="大ボタン"
+                                   KeyTip="BI"
+                                   CanAddToQuickAccessToolBar="False"
+                                   LargeIcon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-KnightsShield_x32.png"/>
+
+                    <Fluent:Button Header="中ボタン"
+                                   KeyTip="MI"
+                                   Size="Middle"
+                                   Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-KnightsShield_x16.png">
+                        <Fluent:Button.ToolTip>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/assets/icons8-SourceCode_x16.png"/>
+                                <TextBlock Margin="3 0 0 0" Text="中ボタンのツールチップです。"/>
+                            </StackPanel>
+                        </Fluent:Button.ToolTip>
+                    </Fluent:Button>
+
+                    <Fluent:Button Header="小ボタン"
+                                   KeyTip="SM"
+                                   ToolTip="小ボタンのツールチップです。"
+                                   Size="Small"
+                                   Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-KnightsShield_x16.png"/>
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="ドロップダウン"
+                                       KeyTip="DD">
+
+                    <Fluent:DropDownButton Header="大ボタン"
+                                           KeyTip="DB"
+                                           LargeIcon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-shield_x32.png">
+                        <Fluent:MenuItem Header="子要素1"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-CSharp_x16.png"/>
+                        <Fluent:MenuItem Header="子要素2"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Java_x16.png"/>
+                    </Fluent:DropDownButton>
+
+                    <Fluent:DropDownButton Header="中ボタン"
+                                           KeyTip="DM"
+                                           Size="Middle"
+                                           Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-shield_x16.png">
+                        <Fluent:MenuItem Header="子要素1"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-CSharp_x16.png"/>
+                        <Fluent:MenuItem Header="子要素2"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Java_x16.png"/>
+                    </Fluent:DropDownButton>
+
+                    <Fluent:DropDownButton Header="小ボタン"
+                                           KeyTip="DS"
+                                           Size="Small"
+                                           Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-shield_x16.png">
+                        <Fluent:MenuItem Header="子要素1"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-CSharp_x16.png"/>
+                        <Fluent:MenuItem Header="子要素2"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Java_x16.png"/>
+                    </Fluent:DropDownButton>
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="トグル"
+                                       KeyTip="TB">
+                    
+                    <Fluent:ToggleButton Header="大トグル"
+                                         KeyTip="TB"
+                                         LargeIcon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-WebShield_x32.png"/>
+                    
+                    <Fluent:ToggleButton Header="中トグル"
+                                         KeyTip="TM"
+                                         Size="Middle"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-WebShield_x16.png"/>
+                    
+                    <Fluent:ToggleButton Header="小トグル"
+                                         KeyTip="TS"
+                                         Size="Small"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-WebShield_x16.png"/>
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="ラジオボタン">
+                    <Fluent:RadioButton Header="選択肢1" KeyTip="11" GroupName="Group1" IsChecked="True"/>
+                    <Fluent:RadioButton Header="選択肢2" KeyTip="12" GroupName="Group1"/>
+                    <Fluent:RadioButton Header="選択肢3" KeyTip="13" GroupName="Group1"/>
+
+                    <Fluent:RadioButton Header="選択肢4" KeyTip="21" GroupName="Group2" IsChecked="True"/>
+                    <Fluent:RadioButton Header="選択肢5" KeyTip="22" GroupName="Group2"/>
+                    <Fluent:RadioButton Header="選択肢6" KeyTip="23" GroupName="Group2"/>
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+            <!-- グループ用のタブ定義 -->
+            <Fluent:RibbonTabItem x:Name="contextualTabA" Header="書式" Group="{Binding ElementName=tabGroup1, Mode=OneWay}"/>
+            <Fluent:RibbonTabItem x:Name="contextualTabB1" Header="デザイン" Group="{Binding ElementName=tabGroup2, Mode=OneWay}"/>
+            <Fluent:RibbonTabItem x:Name="contextualTabB2" Header="レイアウト" Group="{Binding ElementName=tabGroup2, Mode=OneWay}"/>
+        </Fluent:Ribbon>
+
+        <StackPanel Grid.Row="1" Margin="20" HorizontalAlignment="Left">
+            <Button Height="27" Width="150" Content="コンテキストタブ表示切替" Click="Button_Click"></Button>
+        </StackPanel>
+        
+    </Grid>
+    
+    
+</Fluent:RibbonWindow>

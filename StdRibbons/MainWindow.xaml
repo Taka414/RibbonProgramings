@@ -1,0 +1,47 @@
+﻿<RibbonWindow x:Class="Ribbons.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:local="clr-namespace:Ribbons"
+              mc:Ignorable="d"
+              Title="MainWindow"
+              Height="350"
+              Width="525">
+    <Grid>
+        <Ribbon>
+            <RibbonTab Header="ホーム">
+                <RibbonGroup Header="グループ A">
+                    
+                    <RibbonMenuButton Label="メニューボタンA"
+                                      LargeImageSource="/assets/icons8-shield-knight.png">
+                        <RibbonMenuItem Header="1"
+                                        ImageSource="/assets/icons8-k.png"/>
+                        <RibbonMenuItem Header="2"
+                                        ImageSource="/assets/icons8-k2.png"/>
+                    </RibbonMenuButton>
+                    
+                    <RibbonButton Label="ボタン 1"
+                                  SmallImageSource="assets/icons8-shield-1.png"/>
+                    <RibbonButton Label="ボタン 2"
+                                  SmallImageSource="assets/icons8-shield-2.png"/>
+                    <RibbonButton Label="ボタン 3"
+                                  SmallImageSource="assets/icons8-shield-3.png"/>
+                </RibbonGroup>
+                
+                <RibbonGroup Header="グループ B">
+                    <RibbonCheckBox Label="チェックボックス1"
+                                    SmallImageSource="assets/icons8-src.png"/>
+                    <RibbonCheckBox Label="チェックボックス2"
+                                    SmallImageSource="assets/icons8-java.png"/>
+                    <RibbonToggleButton Label="トグルボタン"
+                                        SmallImageSource="assets/icons8-github-32.png"/>
+                </RibbonGroup>
+                
+            </RibbonTab>
+            
+            <RibbonTab Header="カスタム書式"/>
+            <RibbonTab Header="データベース"/>
+        </Ribbon>
+    </Grid>
+</RibbonWindow>
