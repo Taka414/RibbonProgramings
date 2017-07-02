@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=2.2.0.4, Culture=neutral, PublicKeyToken=f08b075e934b7045, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.2.2.0.4\lib\net45\ControlzEx.dll</HintPath>
@@ -95,6 +98,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -137,6 +143,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="assets\icons8-Windows8_x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-Folder-x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-Topmenu_x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

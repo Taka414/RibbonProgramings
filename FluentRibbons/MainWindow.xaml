@@ -59,7 +59,7 @@
                                                  Visibility="Visible" />
             </Fluent:Ribbon.ContextualGroups>
 
-            <Fluent:RibbonTabItem Header="ボタンコントロール"
+            <!--<Fluent:RibbonTabItem Header="ボタンコントロール"
                                   KeyTip="BU">
 
                 <Fluent:RibbonGroupBox Header="ボタン"
@@ -153,7 +153,7 @@
                     <Fluent:RadioButton Header="選択肢6" KeyTip="23" GroupName="Group2"/>
                 </Fluent:RibbonGroupBox>
 
-            </Fluent:RibbonTabItem>
+            </Fluent:RibbonTabItem>-->
 
             <!-- グループ用のタブ定義 -->
             <Fluent:RibbonTabItem x:Name="contextualTabA" 
@@ -201,15 +201,104 @@
                                     Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Windows8_x16.png"/>
 
                 </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="ギャラリー">
+                    
+                    <!-- 普通のギャラリー -->
+                    <Fluent:InRibbonGallery Header="サンプル"
+                                            KeyTip="GA"
+                                            Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Topmenu_x16.png"
+                                            GroupBy="Tag"
+                                            ResizeMode="None"
+                                            MaxItemsInRow="6"
+                                            MinItemsInRow="2"
+                                            ItemWidth="40"
+                                            ItemHeight="55"
+                                            MinItemsInDropDownRow="5">
+                        
+                        <Fluent:InRibbonGallery.Filters>
+                            <Fluent:GalleryGroupFilter Title="All"
+                                                       Groups="Group1,Group2" />
+                            <Fluent:GalleryGroupFilter Title="Group1"
+                                                       Groups="Group1" />
+                            <Fluent:GalleryGroupFilter Title="Group2"
+                                                       Groups="Group2" />
+                        </Fluent:InRibbonGallery.Filters>
+                        
+                        <TextBlock Tag="Group1">1</TextBlock>
+                        <TextBlock Tag="Group1">2</TextBlock>
+                        <TextBlock Tag="Group1">3</TextBlock>
+                        <TextBlock Tag="Group1">4</TextBlock>
+                        <TextBlock Tag="Group1">5</TextBlock>
+                        <TextBlock Tag="Group1">6</TextBlock>
+                        <TextBlock Tag="Group2">G21</TextBlock>
+                        <TextBlock Tag="Group2">G22</TextBlock>
+                        <TextBlock Tag="Group2">G23</TextBlock>
+                        <TextBlock Tag="Group2">G24</TextBlock>
+                        <TextBlock Tag="Group2">G25</TextBlock>
+                        <TextBlock Tag="Group2">G26</TextBlock>
+                    </Fluent:InRibbonGallery>
+                    
+                    <!-- カラーギャラリー -->
+                    <Fluent:DropDownButton SizeDefinition="Small"
+                                           MaxDropDownHeight="500"
+                                           Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Fan_x16.png">
+                        
+                        <Fluent:ColorGallery ThemeColorsSource="{Binding ThemeColors}"
+                                             SelectedColor="{Binding ColorViewModel.ThemeColor, Mode=TwoWay}"
+                                             Mode="ThemeColors"
+                                             StandardColorGridRows="3"
+                                             Columns="10"
+                                             ThemeColorGridRows="5"
+                                             IsNoColorButtonVisible="True" />
+                    </Fluent:DropDownButton>
+
+                </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
             <Fluent:RibbonTabItem x:Name="contextualTabB1" Header="デザイン" Group="{Binding ElementName=tabGroup2, Mode=OneWay}"/>
             <Fluent:RibbonTabItem x:Name="contextualTabB2" Header="レイアウト" Group="{Binding ElementName=tabGroup2, Mode=OneWay}"/>
         </Fluent:Ribbon>
 
-        <StackPanel Grid.Row="1" Margin="20" HorizontalAlignment="Left">
-            <Button Height="27" Width="150" Content="コンテキストタブ表示切替" Click="Button_Click"></Button>
+        <StackPanel Grid.Row="1"
+                    Margin="20"
+                    Orientation="Horizontal">
+            
+            <StackPanel HorizontalAlignment="Left">
+                
+                <Button Height="27"
+                        Width="150"
+                        Content="コンテキストタブ表示切替"
+                        Click="Button_Click"></Button>
+                
+            </StackPanel>
+
+            <TreeView Margin="20 0 0 0"
+                      MinWidth="250"
+                      
+                      ItemsSource="{Binding RootFolders}">
+                <TreeView.ItemTemplate>
+                    
+                    <HierarchicalDataTemplate DataType="{x:Type local:Folder}"
+                                              ItemsSource="{Binding Children}">
+                        
+                        <StackPanel Orientation="Horizontal"
+                                    MinHeight="20">
+                            
+                            <Image Margin="2"
+                                   Width="16"
+                                   Height="16"
+                                   Source="{Binding Image}"/>
+                            
+                            <TextBlock Margin="6 2 4 2" 
+                                       VerticalAlignment="Center"
+                                       Text="{Binding Text}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+            
         </StackPanel>
-        
+
     </Grid>
     
     
