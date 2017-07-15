@@ -150,5 +150,21 @@
   <ItemGroup>
     <Resource Include="assets\icons8-Topmenu_x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-Airplane_x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-AirplaneFront_x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-AirplaneLanding_x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-AirplaneTakeoff_x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\icons8-AirplaneClosedWindow_x32.png" />
+    <Resource Include="assets\icons8-AirplaneOpenWindow_x32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,6 +19,41 @@
         
         <Fluent:Ribbon>
 
+            <!-- アプリケーションメニュー -->
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage>
+                    <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="タブ1">
+                            <DockPanel Background="Black">
+                                <StackPanel DockPanel.Dock="Top" Margin="20">
+                                    <Button Content="aaaa" Width="120" Height="27"/>
+                                    <Button Content="bbbb" Width="120" Height="27" Margin="0 20"/>
+                                </StackPanel>
+                            </DockPanel>
+                        </Fluent:BackstageTabItem>
+                        <Fluent:BackstageTabItem Header="タブ2"></Fluent:BackstageTabItem>
+                        <Fluent:BackstageTabItem Header="タブ3"></Fluent:BackstageTabItem>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+                <!--<Fluent:ApplicationMenu Header="ファイル">
+                    <Fluent:MenuItem Header="メニュー1"
+                                     Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-Airplane_x32.png">
+                        <Fluent:MenuItem Header="メニュー1-1"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-AirplaneClosedWindow_x32.png"/>
+                        <Fluent:MenuItem Header="メニュー1-2"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-AirplaneOpenWindow_x32.png"/>
+                        <Fluent:MenuItem Header="メニュー1-3"
+                                         Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-AirplaneClosedWindow_x32.png"/>
+                    </Fluent:MenuItem>
+                    <Fluent:MenuItem Header="メニュー2"
+                                     Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-AirplaneFront_x32.png"/>
+                    <Fluent:MenuItem Header="メニュー3"
+                                     Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-AirplaneLanding_x32.png"/>
+                    <Fluent:MenuItem Header="メニュー4"
+                                     Icon="pack://application:,,,/Ribbons.Sample;component/assets/icons8-AirplaneTakeoff_x32.png"/>
+                </Fluent:ApplicationMenu>-->
+            </Fluent:Ribbon.Menu>
+            
             <!-- クイックアクセスツールバー -->
             <Fluent:Ribbon.QuickAccessItems>
                 <Fluent:QuickAccessMenuItem IsChecked="True">
@@ -59,7 +94,7 @@
                                                  Visibility="Visible" />
             </Fluent:Ribbon.ContextualGroups>
 
-            <!--<Fluent:RibbonTabItem Header="ボタンコントロール"
+            <Fluent:RibbonTabItem Header="ボタンコントロール"
                                   KeyTip="BU">
 
                 <Fluent:RibbonGroupBox Header="ボタン"
@@ -153,7 +188,7 @@
                     <Fluent:RadioButton Header="選択肢6" KeyTip="23" GroupName="Group2"/>
                 </Fluent:RibbonGroupBox>
 
-            </Fluent:RibbonTabItem>-->
+            </Fluent:RibbonTabItem>
 
             <!-- グループ用のタブ定義 -->
             <Fluent:RibbonTabItem x:Name="contextualTabA" 
@@ -271,31 +306,6 @@
                         Click="Button_Click"></Button>
                 
             </StackPanel>
-
-            <TreeView Margin="20 0 0 0"
-                      MinWidth="250"
-                      
-                      ItemsSource="{Binding RootFolders}">
-                <TreeView.ItemTemplate>
-                    
-                    <HierarchicalDataTemplate DataType="{x:Type local:Folder}"
-                                              ItemsSource="{Binding Children}">
-                        
-                        <StackPanel Orientation="Horizontal"
-                                    MinHeight="20">
-                            
-                            <Image Margin="2"
-                                   Width="16"
-                                   Height="16"
-                                   Source="{Binding Image}"/>
-                            
-                            <TextBlock Margin="6 2 4 2" 
-                                       VerticalAlignment="Center"
-                                       Text="{Binding Text}"/>
-                        </StackPanel>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
             
         </StackPanel>
 
